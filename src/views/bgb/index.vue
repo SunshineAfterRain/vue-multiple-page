@@ -1,6 +1,6 @@
 <template>
-  <div class="asd"> 
- 
+  <div class="sec"> 
+ {{msg}}
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
     data () {
       return {
-        
+        msg:'hahah'
       }
     }
 }

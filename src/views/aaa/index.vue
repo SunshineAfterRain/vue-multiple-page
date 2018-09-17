@@ -1,6 +1,7 @@
 <template>
-  <div class="asd"> 
- sdffffffffffffffffff
+  <div  class="asd"> 
+{{aaa}}
+<i class="iconfont icon-jiantou"></i>
   </div>
 </template>
 
@@ -8,7 +9,7 @@
 export default {
     data () {
       return {
-        
+        aaa: '啊实打实大'
       }
     }
 }

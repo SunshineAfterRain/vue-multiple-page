@@ -10,6 +10,7 @@ const entryDir = resolve("src/views")
 const entryFiles = fs.readdirSync(entryDir)
 const entry = {}
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const template = resolve('index.html')
 var merge = require('webpack-merge')
 
 exports.getEntry = function () {
@@ -25,10 +26,9 @@ exports.htmlWebpackPlugin = function () {
   entryFiles.forEach((dir) => {
     let config = {
       filename: dir + '.html',
-      template: 'index.html',
+      template: template,
       inject: true
     }
-    if (process.env.NODE_ENV === 'production') {
       config = merge(config, {
         minify: {
           removeComments: true,
@@ -37,7 +37,6 @@ exports.htmlWebpackPlugin = function () {
         },
         chunks: [dir, 'vendor']
       })
-    }
     arr.push(new HtmlWebpackPlugin(config))
   })
 
